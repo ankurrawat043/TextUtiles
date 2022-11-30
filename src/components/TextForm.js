@@ -1,23 +1,24 @@
 
-import React, { useState } from "react";
-// PropTypes from 'prop-types';
+import React from "react";
+import { useState } from "react";
 
-export default function TextForm(props) {
+ function TextForm(props) {
+  
   const clearText = () => {
     let newText = "";
     setText(newText);
-    props.showAlert("Text Cleared", "success")
+    props.showAlert("Text Cleared", "success");
 
   };
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert("Converted to UpperCase","success");
+    props.showAlert("Converted to UpperCase", "success");
   };
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
-    props.showAlert("Converted to LowerCase","success");
+    props.showAlert("Converted to LowerCase", "success");
   };
 
   const handleOnChange = (event) => {
@@ -63,12 +64,13 @@ export default function TextForm(props) {
       <div className="container my-2" style={{color:props.mode==='light'?'black':'white'}} >
         <h1>Your text summery</h1>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").length-1} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split("").length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in TextArea to preview it HERE!!!"}</p>
       </div>
     </>
   );
 }
+export default TextForm;
