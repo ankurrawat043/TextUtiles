@@ -1,17 +1,17 @@
 
 import React , { useState } from 'react';
 import './App.css';
-import About from './components/About';
+//import About from './components/About';
 import Alert from './components/Alert';
 import NavBar from './components/NavBar';
 import TextForm from './components/TextForm';
-import {
+/*import {
   BrowserRouter as Router,
   
   Route,
   Link,
   Switch
-} from "react-router-dom";
+} from "react-router-dom";*/
 
 
  function App() {
@@ -45,30 +45,34 @@ import {
     }
   }
   return (
+   
     <>
-    <Router>
+    
     
    <NavBar title="TextUtils" about="About TextUtils" mode={mode} toggleMode={toggleMode}/>
    <Alert alert={alert}/>
    <div className='container my-3'>
-   <Switch>
-          <Route  path="/about">
-            <About />
-          </Route>
-          <Route  path="/">
-         <TextForm showAlert={showAlert} heading="Enter your text to analyze below" mode={mode}/>  
-          </Route>
-    </Switch>      
-          
+  
+
+    <TextForm showAlert={showAlert} heading="Enter your text to analyze below" mode={mode}/>       
         
     
    </div>
    
     
-    </Router>
+   
     </>
   );
 }
 
 export default App;
-
+//<Router>
+ /*<Switch>
+          //<Route  path="/about">
+            <About />
+          </Route>
+          <Route  path="/">
+          
+         // </Route>
+    </Switch> */
+    // </Router>
