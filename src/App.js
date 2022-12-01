@@ -47,21 +47,13 @@ import TextForm from './components/TextForm';
   return (
    
     <>
-    
-    
+     
    <NavBar title="TextUtils" about="About TextUtils" mode={mode} toggleMode={toggleMode}/>
    <Alert alert={alert}/>
    <div className='container my-3'>
-  
-
-    <TextForm showAlert={showAlert} heading="Enter your text to analyze below" mode={mode}/>       
-        
-    
-   </div>
-   
-    
-   
-    </>
+        <TextForm showAlert={showAlert} heading="Enter your text to analyze below" mode={mode}/>       
+   </div> 
+       </>
   );
 }
 
