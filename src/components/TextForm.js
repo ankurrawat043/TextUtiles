@@ -50,13 +50,13 @@ import { useState } from "react";
         </div>
         
        
-          <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+          <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert to upper case
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>
           Convert to lower case
         </button>
-        <button className="btn btn-primary mx-2" onClick={clearText}>
+        <button className="btn btn-primary mx-2 my-1" onClick={clearText}>
           Clear Text 
         </button>
         
@@ -64,11 +64,11 @@ import { useState } from "react";
       <div className="container my-2" style={{color:props.mode==='light'?'black':'white'}} >
         <h1>Your text summery</h1>
         <p>
-          {text.split(" ").length-1} words and {text.length} characters
+          {text.split(/\s+/).filter((element) => {return element.length!==0}).length} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split("").length} Minutes read</p>
+        <p>{0.008 * text.split(/\s+/).filter((element) => {return element.length!==0}).length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text.length>0?text:"Enter something in TextArea to preview it HERE!!!"}</p>
+        <p>{text.length>0?text:"Nothing to preview  HERE!!!"}</p>
       </div>
     </>
   );
